@@ -3,93 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>Status bar</title>
-  <style>
-    #message {
-        width: 80%;
-    }
-
-    input, textarea {
-        margin-top: 4px
-        margin-bottom: 8px;
-        background-color: #f8f8f8;
-    }
-
-    .input_div, .input_div-message {
-        margin-bottom: 8px;
-    }
-
-    .required {
-        font-style: italic;
-        color: red;
-        font-size: 12px
-    }
-
-    @media screen and (min-width: 550px) {
-      .hidden_br {
-          display: none;
-      }
-
-      .input_div {
-          display: inline-block;
-          width: 40%;
-      }
-
-      .input_div, 
-      .input_div-message {
-          margin-bottom: 8px;
-          margin-left: 8px
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/email.css">
 </head>
 <body>
-  <div id="main"></div>
+  <div id="contact"></div>
 
       
       <script src="js/jQuery.js"></script>
+      <script src="js/emailplugin.js"></script>
       <script>
-        var $main = $('#main');
-        populateContact = function(){
-          model.$main.append('<h2>Contact</h2>');
-          model.$main.append('<form name="freeCall" method="post" class="email-form" id="free-call-form"></form>');
-          var $emailform = $('.email-form');
-          $emailform.append('<div class="input_div"><label for="name">Name<span class="required">*</span>:<br></label><input placeholder="Name" name="name" type="text" id="name" ></div>');
-          $emailform.append('<div class="input_div"><label for="email">Email<span class="required">*</span>:<br></label><input name="email" type="email" value="" placeholder="email@address.com" id="email" ></div>');
-          $emailform.append('<div class="input_div"><label for="phone">Phone:<br></label><input placeholder="(***) ***-***" name="phone" type="tel" id="phone" ></div>');
-          $emailform.append('<div class="input_div"><label for="company">Company:<br></label><input placeholder="Company" name="company" type="text" id="company" ></div>');
-          $emailform.append('<div class="input_div"><label for="subject">Subject<span class="required">*</span>:<br></label><input placeholder="Subject" name="subject" type="text" id="subject" ></div>');
-          $emailform.append('<div class="input_div"><label for="subject">Subject<span class="required">*</span>:<br></label><input placeholder="Subject" name="subject" type="text" id="subject" ></div>');
-          $emailform.append('<div class="input_div-message"><label for="message">Message<span class="required">*</span>:<br></label><textarea cols="50" rows="10" placeholder="Type your message here." name="message" type="textarea" id="message" ></textarea></div>');
-          $emailform.append('<div class="input_div"><input type="submit" value="Submit" > <span class="required">*Required field</span></div>');
-
-          activateEmails();
-        }
-        // TEST THIS ONLINE USING TEXTAREA RATHER THAN INPUT
-
-        populateContact();
-  
-        activateEmails = function(){
-          $("#free-call-form").submit(function (e) {
-            e.preventDefault();
-            var form_data = $(this).serialize() + '&destination=' = ''; 
-            console.log(form_data);
-            $.ajax({
-              type: "POST", 
-              url: "emailform.php",
-              dataType: "json", // Add datatype
-              data: form_data
-            }).done(function (data) {
-                console.log(data);
-                alert("Message sent!");
-            }).fail(function (data) {
-                alert("Message failed to send");
-                console.log(data);
-            });
-          }); 
-        }
-
-        activateEmails();
+        
       </script>
     </body>
   </html>

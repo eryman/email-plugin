@@ -1,0 +1,36 @@
+#message {
+    width: 80%;
+}
+
+input, textarea {
+    margin-top: 4px
+    margin-bottom: 8px;
+    background-color: #f8f8f8;
+}
+
+.input_div, .input_div-message {
+    margin-bottom: 8px;
+}
+
+.required {
+    font-style: italic;
+    color: red;
+    font-size: 12px
+}
+
+@media screen and (min-width: 550px) {
+  .hidden_br {
+      display: none;
+  }
+
+  .input_div {
+      display: inline-block;
+      width: 40%;
+  }
+
+  .input_div, 
+  .input_div-message {
+      margin-bottom: 8px;
+      margin-left: 8px
+  }
+}
