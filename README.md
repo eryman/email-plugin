@@ -12,7 +12,7 @@ In the head of the HTML, insert the following:
 
     <link href="css/email.css" rel="stylesheet">
 
-In the body of the HTML, insert the following line wherever you'd like your videos to show up:
+In the body of the HTML, insert the following line wherever you'd like your email form to show up:
 
     <div id="contact"></div>
 
